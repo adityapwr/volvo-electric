@@ -1,40 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Volvo Cars (Global Online Digital)
 
-## Getting Started
+## Front-end coding test (React)
 
-First, run the development server:
+Our team's designer has come up with a new design to show our latest and greatest recharge cars on the website.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Here is how the design look like for desktop and mobile (files are stored under `docs` folder)
+
+### Desktop
+
+![ProductListDesktop](./docs/ProductList-Desktop.png)
+
+### Mobile
+
+![ProductListDesktop](./docs/ProductList-Mobile.png)
+
+The data required to render the design is under `public/api/cars.json` folder. You need to fetch the data and render it in the browser. The data looks like this:
+
+```json
+[
+  {
+    "id": "xc90-recharge",
+    "modelName": "XC90 Recharge",
+    "bodyType": "suv",
+    "modelType": "plug-in hybrid",
+    "imageUrl": "/images/xc90_recharge.jpg"
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The product owner is telling you that you can generate the links to the learn and shop pages of each car by concatating the `id` of the car to the learn (`/learn/`) and shop (`/shop/`) urls.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Two extra SVG icons are also provided by our designer which are stored under `docs` folder.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Requirements
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- The project is bootstraped using [Next.js](https://nextjs.org/).
+- Browser support is modern ever-green browsers.
+- Implement this design using React and Typescript.
+- Accessibility is important.
+- Code Structure and reusablity is important.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Bonus Points:
 
-## Learn More
+- If you use our design system component library, [VCC-UI](https://vcc-ui.vercel.app/)
+- If you add a filter bar on the top to filter cars by `bodyType`
 
-To learn more about Next.js, take a look at the following resources:
+## Submission
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clone this repository to get started. Due to a number of reasons, not least privacy, you will be asked to zip your solution and mail it in, instead of submitting a pull-request. In order to maintain an unbiased reviewing process, please ensure to keep your name or other Personal Identifiable Information (PII) from the code.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
