@@ -7,9 +7,8 @@ import { Car } from "../src/components/Car";
 import { Filter } from "../src/components/Filter";
 import { Car as CarType } from "../src/types/Car.interface";
 
-// Fetching cars data at build time
-export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:3000/api/cars");
+export const getServerSideProps = async () => {
+  const res = await fetch("http://127.0.0.1:3000/api/cars");
   const data = await res.json();
 
   return {
@@ -29,16 +28,6 @@ export default function Home({ initialCars }: HomeProps) {
     useReel({ ref });
 
   const [cars, setCars] = useState(initialCars);
-
-  useEffect(() => {
-    const fetchCars = async () => {
-      const res = await fetch("/api/cars");
-      const data = await res.json();
-      setCars(data);
-    };
-
-    fetchCars();
-  }, []);
 
   return (
     <div className="py-16 px-pagemargin">

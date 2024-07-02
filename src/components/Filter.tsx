@@ -10,12 +10,6 @@ interface FilterProps {
 export const Filter: React.FC<FilterProps> = ({ cars, setCars }) => {
   const [activeFilter, setActiveFilter] = useState("");
 
-  useEffect(() => {
-    if (cars?.length > 0) {
-      setActiveFilter(cars[0].bodyType);
-    }
-  }, [cars]);
-
   const handleFilter = (filter: string) => {
     setActiveFilter(filter);
     setCars(cars.filter((car) => car.bodyType === filter));
